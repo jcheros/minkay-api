@@ -8,7 +8,7 @@
 
     $app->add(function(Request $request, Response $response, callable $next){
         $route = $request->getAttribute("route");
-        $this->logger->debug($route);
+        //$this->logger->debug($route);
         $methods = [];
 
         if(!empty($route))
