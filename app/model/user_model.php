@@ -16,13 +16,13 @@
             $this->response = new Response();
         }
 
-        public function Get($usuario, $pass)
+        public function Login($data)
         {
             try
             {
                 $result = array();
                 $stm = $this->db->prepare("SELECT * FROM $this->table WHERE usuario = ? AND clave = ?");
-                $stm->execute(array($usuario, $pass));
+                $stm->execute(array($data["username"], $data["password"]));
 
                 $this->response->setResponse(true);
                 $this->response->result = $stm->fetch();

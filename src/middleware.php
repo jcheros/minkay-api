@@ -8,7 +8,7 @@
 
     $app->add(function(Request $request, Response $response, callable $next){
         $route = $request->getAttribute("route");
-        //$this->logger->debug($route);
+        
         $methods = [];
 
         if(!empty($route))
@@ -32,7 +32,7 @@
         
         $response = $next($request, $response);
         $response->withHeader('Access-Control-Allow-Origin', '*');
-        $response->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization');
+        $response->withHeader('Access-Control-Allow-Headers', '*');
         $response->withHeader("Access-Control-Allow-Methods", implode(",", $methods));
 
         //$this->logger->debug($response);
