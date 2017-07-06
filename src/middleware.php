@@ -31,9 +31,9 @@
         //$this->logger->debug($request->getMethod() . ' ' . ($route != null && !empty($route)) ? $route->getPattern() : '***', [($route != null && !empty($route)) ? $route->getArguments() : '']);
         
         $response = $next($request, $response);
-        $response->withHeader('Access-Control-Allow-Origin', '*');
-        $response->withHeader('Access-Control-Allow-Headers', '*');
-        $response->withHeader("Access-Control-Allow-Methods", implode(",", $methods));
+        //$response->withHeader('Access-Control-Allow-Origin', '*');
+        //$response->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization');
+        //$response->withHeader("Access-Control-Allow-Methods", implode(",", $methods));
 
         //$this->logger->debug($response);
         //$this->logger->debug($response->getStatusCode() . ' ' . $response->getReasonPhrase(), [(string)$response->getBody()]);
